@@ -1,0 +1,247 @@
+@import './theme.css';
+
+/* Transparent root lets Jira global page background show through. */
+html,
+body,
+#root {
+    background-color: transparent;
+    min-height: 100%;
+}
+
+body {
+    color: var(--sm-color-text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+
+.sm-app {
+    background-color: var(--sm-color-background);
+    color: var(--sm-color-text-primary);
+    min-height: 100%;
+    padding: 24px;
+}
+
+.sm-app__header {
+    border-bottom: 1px solid var(--sm-color-border);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+}
+
+.sm-app__title {
+    color: var(--sm-color-text-primary);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.sm-app__subtitle {
+    color: var(--sm-color-text-secondary);
+    font-size: 14px;
+    margin: 4px 0 0;
+}
+
+.sm-app__content {
+    color: var(--sm-color-text-primary);
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+
+.sm-text {
+    color: var(--sm-color-text-primary);
+}
+
+.sm-text--secondary {
+    color: var(--sm-color-text-secondary);
+}
+
+.sm-text--subtle {
+    color: var(--sm-color-text-subtle);
+}
+
+.sm-link {
+    color: var(--sm-color-link);
+    text-decoration: none;
+}
+
+.sm-link:hover {
+    color: var(--sm-color-link-hover);
+    text-decoration: underline;
+}
+
+/* ── Surfaces & cards ───────────────────────────────────────────────────── */
+
+.sm-card {
+    background-color: var(--sm-color-surface-raised);
+    border: 1px solid var(--sm-color-border);
+    border-radius: 8px;
+    box-shadow: 0 1px 1px var(--sm-color-shadow);
+    padding: 16px;
+}
+
+.sm-card:hover {
+    background-color: var(--sm-color-surface-hover);
+}
+
+.sm-panel {
+    background-color: var(--sm-color-surface);
+    border: 1px solid var(--sm-color-border);
+    border-radius: 3px;
+    padding: 16px;
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────── */
+
+.sm-button {
+    background-color: var(--sm-color-button-primary-bg);
+    border: none;
+    border-radius: 3px;
+    color: var(--sm-color-button-primary-text);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 8px 12px;
+    transition: background-color 0.2s ease;
+}
+
+.sm-button:hover {
+    background-color: var(--sm-color-button-primary-bg-hover);
+}
+
+.sm-button--secondary {
+    background-color: var(--sm-color-button-secondary-bg);
+    border: 1px solid var(--sm-color-button-secondary-border);
+    color: var(--sm-color-button-secondary-text);
+}
+
+.sm-button--secondary:hover {
+    background-color: var(--sm-color-button-secondary-bg-hover);
+}
+
+/* ── Form controls ──────────────────────────────────────────────────────── */
+
+.sm-input,
+.sm-select,
+.sm-textarea {
+    background-color: var(--sm-color-input-bg);
+    border: 1px solid var(--sm-color-input-border);
+    border-radius: 3px;
+    color: var(--sm-color-text-primary);
+    font-size: 14px;
+    padding: 8px 12px;
+    width: 100%;
+}
+
+.sm-input::placeholder,
+.sm-textarea::placeholder {
+    color: var(--sm-color-input-placeholder);
+}
+
+.sm-input:focus,
+.sm-select:focus,
+.sm-textarea:focus {
+    border-color: var(--sm-color-border-focus);
+    outline: none;
+}
+
+.sm-label {
+    color: var(--sm-color-text-secondary);
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* ── Status badges ──────────────────────────────────────────────────────── */
+
+.sm-badge {
+    border-radius: 3px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    text-transform: uppercase;
+}
+
+.sm-badge--success {
+    background-color: var(--sm-color-success-bg);
+    color: var(--sm-color-success);
+}
+
+.sm-badge--warning {
+    background-color: var(--sm-color-warning-bg);
+    color: var(--sm-color-warning);
+}
+
+.sm-badge--danger {
+    background-color: var(--sm-color-danger-bg);
+    color: var(--sm-color-danger);
+}
+
+.sm-badge--info {
+    background-color: var(--sm-color-info-bg);
+    color: var(--sm-color-info);
+}
+
+/* ── Table ──────────────────────────────────────────────────────────────── */
+
+.sm-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.sm-table th {
+    background-color: var(--sm-color-table-header-bg);
+    border-bottom: 2px solid var(--sm-color-border);
+    color: var(--sm-color-text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.sm-table td {
+    border-bottom: 1px solid var(--sm-color-border);
+    color: var(--sm-color-text-primary);
+    padding: 8px 12px;
+}
+
+.sm-table tr:hover td {
+    background-color: var(--sm-color-table-row-hover);
+}
+
+/* ── Loading & empty states ─────────────────────────────────────────────── */
+
+.sm-loading {
+    color: var(--sm-color-text-secondary);
+    padding: 24px;
+    text-align: center;
+}
+
+.sm-empty {
+    color: var(--sm-color-text-subtle);
+    padding: 32px;
+    text-align: center;
+}
+
+/* ── Scrollbar (WebKit) ───────────────────────────────────────────────────── */
+
+.sm-app ::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+.sm-app ::-webkit-scrollbar-track {
+    background: var(--sm-color-scrollbar-track);
+}
+
+.sm-app ::-webkit-scrollbar-thumb {
+    background: var(--sm-color-scrollbar-thumb);
+    border-radius: 4px;
+}

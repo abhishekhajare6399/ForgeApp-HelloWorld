@@ -1,0 +1,48 @@
+modules:
+  jira:globalPage:
+    - key: sprint-manager-admin-page
+      resource: main
+      resolver:
+        function: resolver
+      title: Sprint Manager For Jira
+  trigger:
+    - key: install-event
+      function: install-handler
+      events:
+        - avi:forge:installed:app
+    - key: upgrade-event
+      function: upgrade-handler
+      events:
+        - avi:forge:upgraded:app
+  preUninstall:
+    - key: pre-uninstall-event
+      function: pre-uninstall-handler
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: install-handler
+      handler: index.handleInstall
+    - key: upgrade-handler
+      handler: index.handleUpgrade
+    - key: pre-uninstall-handler
+      handler: index.handlePreUninstall
+resources:
+  - key: main
+    path: static/build
+    tunnel:
+      port: 3000
+permissions:
+  scopes:
+    - storage:app
+    - read:jira-user
+    - read:email-address:jira
+  external:
+    fetch:
+      backend:
+        - api.resend.com
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/6fb5825b-7797-47c9-bde0-d063bcb55b2b
